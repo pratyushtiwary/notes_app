@@ -1,5 +1,7 @@
 ## Notes App (Using React)
 
+[Live Preview](https://pratyushtiwary.github.io/notes_app/)
+
 There are 2 ways to run this app:-
 
  - Using npm :-
