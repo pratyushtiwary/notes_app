@@ -1,0 +1,65 @@
+.sec{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80vw;
+    height: 80vh;
+    background: #fff;
+    z-index: 5;
+
+    .close{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24pt;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: 0.15s linear;
+        padding: 5px;
+    }
+
+    .close:hover{
+        background: #eee;
+    }
+
+    .title{
+        position: relative;
+        margin: 20px 0;
+        font-size: 26pt;
+        text-align: center;
+        word-wrap: break-word;
+        max-width: 85%;
+        margin-left: 5px;
+    }
+
+    .body{
+        position: relative;
+        font-size: 16pt;
+        text-align: center;
+        word-wrap: break-word;
+        max-width: 85%;
+        margin-left: 5px;
+    }
+
+    .toolbar{
+        position: relative;
+        text-align: right;
+        padding: 10px;
+
+        span{
+            font-size: 24pt;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: 0.15s linear;
+            padding: 5px;
+        }
+
+        span:hover{
+            background: #eee;
+        }
+
+    }
+
+}

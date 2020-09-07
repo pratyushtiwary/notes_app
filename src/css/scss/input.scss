@@ -1,0 +1,50 @@
+.input{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin: 20px 0;
+    padding: 10px 0;
+    width: 80%;
+
+    label{
+        position: absolute;
+        top: 50%;
+        transform: translate(0%,-50%);
+        z-index: 1;
+        margin-left: 10px;
+        transition: 0.15s linear;
+        color: blue;
+    }
+
+    label.float{
+        top: 0%;
+        font-size: 10pt;
+        margin-left: 0;
+    }
+
+    input{
+        font-size: 16pt;
+        font-family: 'Kumbh Sans', sans-serif;
+        border: none;
+        outline: none;
+        padding: 10px;
+        border-bottom: 1px solid blue;
+        width: 100%;
+    }
+
+    textarea{
+        resize: none;
+        border: none;
+        outline: none;
+        font-size: 16pt;
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid blue;
+    }
+
+    textarea ~ label{
+        top: 35%;
+        font-family: 'Kumbh Sans', sans-serif;
+    }
+
+}

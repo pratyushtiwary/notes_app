@@ -1,0 +1,108 @@
+modal{
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 0.075s linear;
+
+    .opacity{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.75);
+        z-index: -1;
+    }
+
+    .cont{
+        min-width: 40%;
+        max-width: 95%;
+        max-height: 80%;
+        overflow-y: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) scale(0.75);
+        background: #fff;
+        padding: 10px;
+        border-radius: 4px;
+        transition: 0.25s linear;
+
+        .head{
+            font-size: 32pt;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .close{
+            font-size: 24pt;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+
+        .body{
+            margin: 10px 0;
+            font-size: 16pt;
+        }
+
+        .options{
+            margin: 10px 0;
+
+            .option{
+                position: relative;
+                left: 50%;
+                transform: translate(-50%);
+                width: 90%;
+                cursor: pointer;
+                padding: 10px;
+                font-size: 16pt;
+                text-align: center;
+                color: blue;
+                transition: 0.25s linear;
+                border-radius: 4px;
+                margin: 5px 0;
+            }
+
+            .option:hover{
+                background: #eee;
+            }
+
+        }
+
+    }
+
+}
+
+modal.open{
+    opacity: 1;
+    pointer-events: auto;
+
+    .cont{
+        transform: translate(-50%,-50%) scale(1);
+    }
+
+}
+
+@media screen and (max-width: 750px){
+    modal{
+        .cont{
+            min-width: 80%;
+
+            .options{
+                .option{
+                    cursor: default;
+                }
+            }
+
+        }
+    }
+}

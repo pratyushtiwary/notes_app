@@ -1,0 +1,94 @@
+.notes{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-gap: 2em;
+    padding: 10px;
+
+    .note.add{
+        background: #eee;
+        font-size: 32pt;
+        min-height: 200px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .note{
+        max-width: 200px;
+        border-radius: 4px;
+        box-shadow: 0 0 5px 0 #eee;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        margin: 10px 0;
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        width: 100%;
+        min-height: 200px;
+        padding: 10px;
+        height: 100%;
+        cursor: pointer;
+
+        .cont{
+            position: relative;
+            max-width: 100%;
+
+            .title{
+                font-size: 32pt;
+                word-wrap: break-word;
+                margin-bottom: 10px;
+            }
+    
+            .body{
+                position: relative;
+                max-width: 100%;
+                font-size: 16pt;
+                margin-bottom: 10px;
+                word-break: break-all;
+                max-height: 150px;
+                overflow-y: hidden;
+            }
+    
+            .date{
+                position: absolute;
+                bottom: 5%;
+            }
+    
+        }
+
+        .toolbar{
+            .icon{
+                position: relative;
+                left: 50%;
+                transform: translate(-50%);
+                font-size: 24pt;
+                margin-bottom: 20px;
+                border-radius: 50%;
+                transition: 0.15s linear;
+                padding: 10px;
+            }
+
+            .icon:hover{
+                background: #eee;
+            }
+        }
+
+    }
+
+
+}
+
+@media screen and (max-width: 800px){
+    .notes{
+        .note.add{
+            cursor: default;
+        }
+
+        .note{
+            cursor: default;
+        }
+
+    }
+}

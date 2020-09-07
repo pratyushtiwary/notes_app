@@ -1,0 +1,267 @@
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.icon {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+.input {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  margin: 20px 0;
+  padding: 10px 0;
+  width: 80%;
+}
+.input label {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  z-index: 1;
+  margin-left: 10px;
+  transition: 0.15s linear;
+  color: blue;
+}
+.input label.float {
+  top: 0%;
+  font-size: 10pt;
+  margin-left: 0;
+}
+.input input {
+  font-size: 16pt;
+  font-family: "Kumbh Sans", sans-serif;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-bottom: 1px solid blue;
+  width: 100%;
+}
+.input textarea {
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: 16pt;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid blue;
+}
+.input textarea ~ label {
+  top: 35%;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+modal {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 0.075s linear;
+}
+modal .opacity {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: -1;
+}
+modal .cont {
+  min-width: 40%;
+  max-width: 95%;
+  max-height: 80%;
+  overflow-y: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.75);
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  transition: 0.25s linear;
+}
+modal .cont .head {
+  font-size: 32pt;
+  text-align: center;
+  margin-top: 10px;
+}
+modal .cont .close {
+  font-size: 24pt;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+modal .cont .body {
+  margin: 10px 0;
+  font-size: 16pt;
+}
+modal .cont .options {
+  margin: 10px 0;
+}
+modal .cont .options .option {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  width: 90%;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16pt;
+  text-align: center;
+  color: blue;
+  transition: 0.25s linear;
+  border-radius: 4px;
+  margin: 5px 0;
+}
+modal .cont .options .option:hover {
+  background: #eee;
+}
+
+modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+modal.open .cont {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media screen and (max-width: 750px) {
+  modal .cont {
+    min-width: 80%;
+  }
+  modal .cont .options .option {
+    cursor: default;
+  }
+}
+.notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2em;
+  padding: 10px;
+}
+.notes .note.add {
+  background: #eee;
+  font-size: 32pt;
+  min-height: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.notes .note {
+  max-width: 200px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px 0 #eee;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  width: 100%;
+  min-height: 200px;
+  padding: 10px;
+  height: 100%;
+  cursor: pointer;
+}
+.notes .note .cont {
+  position: relative;
+  max-width: 100%;
+}
+.notes .note .cont .title {
+  font-size: 32pt;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+}
+.notes .note .cont .body {
+  position: relative;
+  max-width: 100%;
+  font-size: 16pt;
+  margin-bottom: 10px;
+  word-break: break-all;
+  max-height: 150px;
+  overflow-y: hidden;
+}
+.notes .note .cont .date {
+  position: absolute;
+  bottom: 5%;
+}
+.notes .note .toolbar .icon {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 24pt;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  transition: 0.15s linear;
+  padding: 10px;
+}
+.notes .note .toolbar .icon:hover {
+  background: #eee;
+}
+
+@media screen and (max-width: 800px) {
+  .notes .note.add {
+    cursor: default;
+  }
+  .notes .note {
+    cursor: default;
+  }
+}
+.snackbar {
+  background: #000;
+  color: #fff;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 0px;
+  left: 20px;
+  padding: 15px;
+  font-size: 16pt;
+  z-index: 6;
+  opacity: 0;
+  pointer-events: none;
+  transition: bottom 0.15s ease;
+  width: fit-content;
+}
+
+.snackbar.show {
+  pointer-events: auto;
+  opacity: 1;
+  bottom: 20px;
+}
+
+@media screen and (max-width: 750px) {
+  .snackbar {
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
