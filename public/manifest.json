@@ -1,6 +1,6 @@
 {
   "short_name": "Notes App",
-  "name": "A full-fledged Notes App created using React",
+  "name": "Notes App",
   "icons": [
     {
       "src": "favicon.ico",
