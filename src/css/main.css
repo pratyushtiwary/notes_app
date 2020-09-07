@@ -94,7 +94,7 @@ modal .opacity {
 }
 modal .cont {
   min-width: 40%;
-  max-width: 95%;
+  max-width: 90%;
   max-height: 80%;
   overflow-y: auto;
   position: absolute;
