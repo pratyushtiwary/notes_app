@@ -119,8 +119,12 @@ modal .cont .close {
   cursor: pointer;
 }
 modal .cont .body {
+  position: relative;
   margin: 10px 0;
   font-size: 16pt;
+  text-align: center;
+  max-width: 90%;
+  word-break: break-all;
 }
 modal .cont .options {
   margin: 10px 0;
